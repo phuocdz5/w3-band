@@ -1,0 +1,553 @@
+/* Reset Css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* đổi font chữ cho toàn web của mình */
+html{
+    font-family: Arial, Helvetica, sans-serif ;
+    /* Hành vi cuộn */
+    scroll-behavior: smooth;
+}
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+*/
+
+
+/* 
+1. Vị trí
+2. Kích thước
+3. Màu sắc
+4. Kiểu dáng(kiểu chữ...)
+*/
+
+
+
+ /* Khắc phục tách phần tử khi sử dụng thẻ float */
+.clear{
+    clear: both;
+}
+/* Hàng  */
+/* Phân ra cột với hàng chung */
+.row{
+    /* 2 ảnh thụt vào trong kéo ra 2 bên */
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/* Lớp giả clear */
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* Cột */
+.col{
+    /* đẩy lên một hàng bên trái */
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+/* Chia đều ra 3 cột */
+.col-third{
+    width: 33.33333%;
+}
+.col-full{
+    width: 100%;
+}
+/* chia đều ra 2 cột */
+.col-haf{
+    width: 50%;
+}
+/* căn giữa chữ */
+.text-center{
+    text-align: center;
+}
+/* margin top 8px */
+.mt-8{
+    margin-top: 8px !important;
+}
+/* margin bottom 16px */
+.mt-16{
+    margin-top: 16px !important;
+}
+/* Kéo sang phải */
+.pull-right{
+    float: right !important;
+}
+/* css vào nút */
+.buttom{
+    margin: 8px 0 16px;
+    padding: 11px 16px;
+    background-color: #000;
+    color: #fff;
+    /* Bỏ dấu gạch chân trong thẻ a */
+    text-decoration: none;
+    /* không bị đè lên thành phần khác khi padding */
+    display: inline-block;
+    border: none;
+}
+/* Hiệu ứng nút */
+.buttom:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+#main{
+
+}
+/* Định dạng phần đầu */
+#header{
+    position: fixed;
+    /* dính trên đỉnh, giúp dính đều trên đỉnh, không bị mất khung */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: black;
+    /* giúp ảnh nổi lên trên */
+    z-index: 1;
+    
+}
+#nav{
+    /* Giúp cho nội dung không chiếm hết */
+    display: inline-block;
+}
+#nav, .subnav{
+    /* bỏ dấu chấm đầu dòng trong thẻ li */
+    list-style-type: none;
+    
+}
+/* CSS trực tiếp li con của nav */
+#nav >li{
+    /* Nằm trên một hàng */
+    display: inline-block;
+    position: relative;
+
+}
+/* menu con */
+#nav .subnav{
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    /* thành phần trong box-shadow: trục x, trục y, blur, color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+
+
+}
+/* Lấy thẻ a trong subnav  */
+/* Css chữ trong menu con */
+#nav .subnav a{
+    color: #000;
+    line-height: 38px;
+    padding: 0 16px;
+    
+}
+/* Đổi kích thước icon down */
+#nav .nav-icon-down{
+    /* mặc định icon là 16px */
+    font-size: 14px;
+}
+
+/* css trực tiếp thẻ a trong li trong nav */
+#nav > li >a{
+    color: white;
+    /* CHUYỂN ĐỔI TEXT THÀNH IN hoa */
+    text-transform: uppercase;
+
+}
+/* css hộp chữ trên thanh điều hướng */
+#nav li a{
+    /* Bỏ gạch chân thẻ a */
+    text-decoration: none;
+    /* căn giữa theo chiều cao */
+    line-height: 46px;
+    padding: 0 24px;
+    /* inline không tăng kích thước chỉ ăn theo chiều cao của nó 
+        Nên display: block sẽ tăng kích thước của thẻ a*/
+    display: block;
+
+}
+/* di vào li con nav sẽ app thuộc tính vào subnav */
+#nav li:hover .subnav{
+    /* Mạnh block hơn none, giúp hiển thị */
+    display: block;
+
+}
+/* Viết gộp nếu cùng thuộc tính css */
+/* Khi ta hover li thì con của nó sẽ được hưởng */
+#nav >li:hover> a,
+#nav .subnav a:hover {
+    color: black;
+    background-color: #ccc;
+   
+}
+/* Css vào nút search */
+#header .search-buttom{
+    /* Đẩy sang phải */
+    float: right;
+    
+
+}
+/* css vào font icon */
+#header .search-buttom .search-icon{
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    line-height: 46px;
+    padding: 0 21px;
+    
+    
+}
+/* Lớp giả icon */
+#header .search-buttom:hover .search-icon{
+    /* cursor là thay đổi trỏ chuột */
+    cursor: pointer;
+    background-color: #f44336;
+    
+}
+/* Định dạng slider */
+#slider{
+    margin-top: 46px;
+    /* đặt giá trị % thì kích thước % padding = kích thước chiều rộng của chính nó */
+    padding-top: 50%;
+    /* css ảnh 1 */
+    /* sau url đến vị trí của ảnh , đến kích thước, đến lặp lại ảnh hoặc không */
+    background: url('../img/slider/anh1.jpg') top center / cover no-repeat;
+    position: relative;
+
+}
+#slider .text-content {
+    position: absolute;
+    color: #fff;
+    bottom: 48px;
+    width: 100%;
+    /* căn chữ ở giữa */
+    text-align: center;
+    
+}
+
+#slider .text-heading {
+    font-size: 24px;
+    /* giảm đồ dày của chữ giá trị từ 1 ->700 */
+    font-weight: 500;
+    
+}
+
+#slider .text-description {
+    font-size: 15px;
+    /* đẩy lên 25px */
+    margin-top: 25px;
+    
+}
+
+#content{
+   
+
+}
+#content .content-section{
+    width: 800px;
+    padding: 64px 16px 112px;
+    /* căn giữa đoạn văn */
+    margin-left: auto;
+    margin-right: auto;
+}
+#content .section-heading{
+    /* căn chữ giữa đoạn văn */
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    /* giản cách chữ */
+    letter-spacing: 4px;
+}
+#content .section-sub-heading{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 15px;
+    /* chữ in nghiêng */
+    font-style: italic;
+    /* độ mờ của chữ */
+    opacity: 0.6;
+}
+/* nội dung */
+#content .about-text{
+    margin-top: 25px;
+    font-size: 15px;
+    /* căn đều 2 bên đoạn văn */
+    text-align: justify;
+    /* Chiều cao của chữ */
+    line-height: 1.4;
+}
+#content .member-list{
+    margin-top: 48px;
+}
+
+
+/* css tên trong the band */
+#content .member-name{
+    padding: 15px 0;
+    font-size: 15px;
+}
+/* css ảnh trong the band */
+#content .member-avata{
+    width: 154px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+}
+/* css tour */
+#content .tour-cha{
+    background-color: black;
+
+}
+
+.tour-cha .content-section{
+    color: #fff;
+
+
+}
+/* css vào tổng thể danh sách */
+.book-list{
+    background-color: #fff;
+    list-style-type: none;
+    margin-top: 30px;
+    
+}
+/* css vào thẻ li trong thẻ book-list */
+.book-list li{
+    padding: 8px 16px;
+    font-size: 15px;
+    color: #757575;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+/* css vào thẻ span sold-out trong thẻ book-list */
+.book-list .sold-out{
+    font-size: 15px;
+    padding: 3px 8px;
+    margin-left: 16px;
+    background-color: #f44336 ;
+    color: #fff;
+}
+/* css vào thẻ quantity của book-list */
+.book-list .quantity{
+    /* đẩy qua bên phải vừa gắn phần tử thành một cái box */
+    float: right;
+    width: 24px;
+    height: 24px;
+    font-size: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    margin: -2px;
+}
+/* css tổng địa điểm */
+.tour-cha .place-list{
+    margin-top: 32px ;
+    
+    
+    
+}
+
+
+/* css vào các ảnh trong địa điểm */
+.tour-cha .place-image{
+    width: 100%;
+    /* thành hộp */
+    display: block;
+
+
+
+}
+/* hiệu ứng img */
+.tour-cha .place-image:hover{
+    opacity: 0.6;
+}
+
+.tour-cha .place-body{
+    padding: 0 16px;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+
+}
+/* css vào heading của địa điểm */
+.tour-cha .place-heading{
+    padding: 8px 0;
+    font-weight: 550;
+    font-size: 15px;
+
+
+}
+/* css vào chữ ngày tháng trong place */
+.tour-cha .place-times{
+    padding: 8px 0;
+    opacity: 0.6;
+
+
+}
+/* css vào nội dung */
+.tour-cha .place-content{
+    padding: 8px 0;
+
+}
+
+/* css vào contact */
+.contact-content{
+    padding: 50px 0 32px;
+}
+/* css vào chữ trong form */
+.contact-info{
+    font-size: 18px;
+    padding-bottom: 16px;
+    /* độ cách dòng của chữ */
+    line-height: 1.5;
+}
+/* css vào thẻ i con của .contact-info trong thẻ i có chuỗi ti-*/
+.contact-info i[class*="ti-"]{
+    display: inline-block;
+    width: 30px;
+}
+/* css vào form điền chữ */
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    outline: none;
+}
+.map-section img{
+    width: 100%;
+}
+
+#footer{
+    padding: 64px 16px;
+    
+
+}
+#footer .icon-footer a{
+    font-size: 24px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+#footer .content-footer a:hover,
+#footer .icon-footer a:hover{
+    opacity: 0.5;
+}
+#footer .content-footer{
+    color: rgba(0, 0, 0, 0.4);
+    margin: 15px 0;
+}
+/* copyright */
+#footer .content-footer a{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* css vào modal của nút buy tickets */
+.modal{
+    position: fixed;
+    /* định dạng toàn màn hình */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+/* Mở modal lên */
+.modal.open{
+    display: flex;
+}
+.contain-modal{
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    width: 900px;
+    min-height: 200px;
+    /* app animation vào  */
+    /* Animation gồm có tên của keyframes và giây xuất hiện */
+    animation: animation-modal 0.5s;
+
+}
+/* css nút close */
+.close-modal:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.close-modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    color: #ccc;
+    opacity: 0.6;
+
+}
+.heading-modal {
+    height: 130px;
+    background-color: #009688;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4px;
+    color: #fff;
+}
+.body-modal{
+    padding: 16px;
+}
+.modal-label{
+    /* inline là nằm trên cùng 1 hàng */
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.modal-input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc ;
+    margin-bottom: 25px;
+}
+#modal-pay{
+    padding: 18px;
+    width: 100%;
+    background-color: #009688;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+}
+#modal-pay:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.footer-modal{
+    padding: 16px;
+    float: right;
+}
+.footer-modal a{
+    color: #2196F3;
+}
+/* Tạo animation cho modal từ từ hiện ra */
+@keyframes animation-modal{
+    /* Bắt đầu */
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+
+    }
+    /* Đến */
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
