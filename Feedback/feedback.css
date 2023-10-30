@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.section{
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.cards .TalkAboutUs{
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+.cards .TalkAboutUs h1{
+    text-align: center;
+    font-family: 'SVN-Mercuria';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.021rem;
+    line-height: 3.875rem;
+    background: palevioletred;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 4px 20px #f3c1c1;
+    width: 20.313rem;
+    text-align: center;
+    margin: 1.563rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 1.25rem;
+}
+
+.description h2{
+    font-family: 'SVN-Mercuria';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 160%;
+    letter-spacing: 0.006rem;
+    text-transform: uppercase;
+    color: #3B3F5C;
+}
+
+.content p{
+    min-height: 4.375rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.863rem;
+    line-height: 160%;
+    letter-spacing: 0.006rem;
+    color: #3B3F5C;
+    margin-top: 0.625rem;
+    margin-bottom: 0.938rem;
+}
+
+.image-section{
+    margin: 1.875rem;
+}
+
+.button-ground .button{
+    background: rgb(255, 228, 228);
+    width: 4.375rem;
+    height: 1.563rem;
+    border-radius: 1.856rem;
+    border: 1px solid rgb(255, 228, 228);
+    color: rgb(255, 105, 72);
+    margin: 0.5rem;
+}
